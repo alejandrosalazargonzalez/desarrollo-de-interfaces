@@ -1,3 +1,7 @@
+/**
+ * Author: alejandrosalazargonzalez
+ * Version: 1.0.0 
+ */
 int mayor(List<int>numeros){
   int mayor = numeros[1];
   for (var i = 1; i < numeros.length; i++) {

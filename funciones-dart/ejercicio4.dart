@@ -1,3 +1,7 @@
+/**
+ * Author: alejandrosalazargonzalez
+ * Version: 1.0.0 
+ */
 int sumar(List<int>numeros){
   int suma =0;
   for (var i = 1; i < numeros.length; i++) {
