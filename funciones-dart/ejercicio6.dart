@@ -1,5 +1,8 @@
 import 'dart:io';
-
+/**
+ * Author: alejandrosalazargonzalez
+ * Version: 1.0.0 
+ */
 void operar(int num1, int num2){
   print("¿que operacion desea hacer?\n 1.suma\n 2.resta\n 3.multiplicacion \n 4.division");
   int seleccion = int.parse(stdin.readLineSync() ?? "0");

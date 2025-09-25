@@ -1,5 +1,8 @@
 import 'dart:math';
-
+/**
+ * Author: alejandrosalazargonzalez
+ * Version: 1.0.0 
+ */
 List<num> cuadrados(List<num> numeros){
   List<num> salida = [];
   numeros.forEach((numeros)=> salida.add(pow(numeros, 2)));
