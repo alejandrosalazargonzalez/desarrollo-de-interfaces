@@ -40,16 +40,21 @@ class MyHomePage extends StatelessWidget {
 
     final WordPair pair = appState.current;
     return Scaffold(
-      body: Column(
-        children: [
-          Text('A random idea:'),
-          BigCard(pair: pair), // ← Muestra la palabra en minúsculas
-          ElevatedButton(onPressed: () {
-              appState.getNext();
-            },
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('A random idea:'),
+            BigCard(pair: pair),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                appState.getNext();
+              },
             child: Text("Siguiente")
             ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -66,11 +71,12 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    final wordStyle = theme.textTheme.displayMedium?.copyWith(color: theme.colorScheme.onPrimary) ;
     return Card(
       color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: Text(pair.asLowerCase),
+        child: Text(pair.asLowerCase, style: wordStyle,semanticsLabel: "${pair.first} ${pair.second}",),
       ),
     );
   }
