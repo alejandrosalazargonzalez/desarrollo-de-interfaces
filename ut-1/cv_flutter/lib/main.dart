@@ -58,7 +58,6 @@ class MyCVApp extends StatelessWidget {
             ),
           ],
         ),
-
         const SizedBox(height: 5),
 
         const SizedBox(height: 8),
@@ -143,16 +142,16 @@ class MyCVApp extends StatelessWidget {
 
           _sectionTitle("CAPACITACIONES"),
           _bulletPoint(
-            'Nivel medio de programación en C#, C++, Java, HTML5 y MIPS.',
+            'Nivel medio de programación en C#, C++, Java, \nHTML5 y MIPS.',
           ),
           _bulletPoint('Nivel medio en Fusion360.'),
           _bulletPoint('Nivel bajo en Blender.'),
           _bulletPoint('Formación en impresión 3D con resina.'),
-          _bulletPoint('Certificado en programación orientada a objetos C#.'),
+          _bulletPoint('Certificado en programación orientada a\nobjetos C#.'),
           _bulletPoint('Certificado en desarrollo 2D en Unity.'),
           _bulletPoint('Certificado en desarrollo 3D en Unity.'),
           _bulletPoint(
-            'Conocimientos básicos de sistemas electrónicos digitales.',
+            'Conocimientos básicos de sistemas electrónicos \ndigitales.',
           ),
           const SizedBox(height: 20),
 
@@ -211,4 +210,5 @@ class MyCVApp extends StatelessWidget {
       height: 150,
     );
   }
+
 }
