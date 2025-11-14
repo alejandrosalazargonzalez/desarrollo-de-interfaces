@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MiApp());
 
 class MiApp extends StatelessWidget {
+  const MiApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,13 +41,17 @@ class MyTextField extends StatelessWidget {
         border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(18),
       ),
-      child: TextField(decoration: InputDecoration(label: Row(
-        spacing: 20,
-        children: [
-          Icon(Icons.lock,color: Colors.grey,),
-          Text(texto, style: TextStyle(color: Colors.white),),
-        ],
-      ))),
+      child: TextField(
+        decoration: InputDecoration(
+          label: Row(
+            spacing: 20,
+            children: [
+              Icon(Icons.lock, color: Colors.grey),
+              Text(texto, style: TextStyle(color: Colors.white)),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
@@ -53,9 +59,7 @@ class MyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [myTextField("Email or username"),
-        myTextField("Password")
-      ],
+      children: [myTextField("Email or username"), myTextField("Password")],
     );
   }
 }
