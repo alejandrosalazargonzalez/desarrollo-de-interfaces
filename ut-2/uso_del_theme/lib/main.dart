@@ -10,101 +10,44 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: false),
-      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all(Colors.teal),
+            foregroundColor: WidgetStateProperty.all(Colors.white),
+            padding: WidgetStateProperty.all(
+              const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+            ),
+            shape: WidgetStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+            ),
+          ),
+        ),
+      ),
+
+      home: const ButtonStyleScreen(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ButtonStyleScreen extends StatelessWidget {
+  const ButtonStyleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Home Page")),
-
+      appBar: AppBar(title: const Text("Botones personalizados")),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Material2App()),
-                );
-              },
-              child: Text("Ir a la pagina Material 2"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Material3App()),
-                );
-              },
-              child: Text("Ir a la pagina Material 3"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Material2App extends StatelessWidget {
-  const Material2App({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: false),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Material2")),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(Icons.arrow_left),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              decoration: InputDecoration(labelText: "Introduce tu nombre"),
-            ),
-            ElevatedButton(onPressed: () {}, child: Text("boton")),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Material3App extends StatelessWidget {
-  const Material3App({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Material3")),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(Icons.arrow_left),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              decoration: InputDecoration(labelText: "Introduce tu nombre"),
-            ),
-            ElevatedButton(onPressed: () {}, child: Text("boton")),
-          ],
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text("Mi botón personalizado"),
         ),
       ),
     );
