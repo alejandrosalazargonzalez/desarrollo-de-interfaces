@@ -24,10 +24,7 @@ class MyMainWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Widget principal')),
       body: Center(
-        child: Text(
-          'Aquí irá tu código',
-          style: TextStyle(fontSize: 18),
-        ),
+        child: Text('Aquí irá tu código', style: TextStyle(fontSize: 18)),
       ),
     );
   }
@@ -42,19 +39,17 @@ class WidgetPersonalizado extends StatelessWidget {
       body: Center(
         child: Card(
           color: Colors.grey[200],
-          child:Row(
-          children: Column(
+          child: Row(
             children: [
-              ElevatedButton(onPressed: () {
-
-              }, child: Icon(Icons.work)  
-              )
+              Column(
+                children: [
+                  ElevatedButton(onPressed: () {}, child: Icon(Icons.work)),
+                ],
+              ),
             ],
           ),
-          ) 
         ),
       ),
     );
   }
-  
 }

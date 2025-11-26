@@ -44,34 +44,32 @@ class _MyAppState extends State {
 
       themeMode: _isDark ? ThemeMode.dark : ThemeMode.light,
 
-      home:HomePage(isDark: false,toggleTheme: () {
-        
-      },
-      )
-      );
+      home: HomePage(isDark: false, toggleTheme: () {}),
+    );
   }
 }
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatelessWidget {
   final bool isDark;
   final VoidCallback toggleTheme;
   const HomePage({super.key, required this.isDark, required this.toggleTheme});
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(title: const Text('Tema claro / oscuro')),
+    return Scaffold(
+      appBar: AppBar(title: const Text('Tema claro / oscuro')),
 
-        body: Center(
-          child: ElevatedButton(
-            onPressed: toggleTheme,
-            child: Text(isDark ? 'Cambiar a claro' : 'Cambiar a oscuro'),
-          ),
-        ),
-
-        floatingActionButton: FloatingActionButton(
+      body: Center(
+        child: ElevatedButton(
           onPressed: toggleTheme,
-          child: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+          child: Text(isDark ? 'Cambiar a claro' : 'Cambiar a oscuro'),
         ),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: toggleTheme,
+        child: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+      ),
     );
- }
+  }
 }
+
